@@ -8,3 +8,27 @@
 //   5 - Distância em KM da viagem;
 
 // Imprima no console o valor que será gasto para realizar esta viagem.
+
+/* DATA */
+const combustivel = {
+  gasolina: {
+    preco: 5.79 
+  },
+  etanol: {
+    preco: 3.29
+  },
+};
+
+/* FUNCTION */
+
+const calcularValorGasto = (tipoGasolina, distanciaEmKM) => {
+  const precoCombustivel = combustivel[tipoGasolina].preco;
+  const kmPorLitros = 10;
+
+  const litrosConsumidos = distanciaEmKM / kmPorLitros;
+  const valor = precoCombustivel * litrosConsumidos;
+
+  return valor;
+};
+
+console.log(calcularValorGasto('etanol', 200));
