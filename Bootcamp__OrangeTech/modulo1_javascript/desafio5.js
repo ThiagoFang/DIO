@@ -8,7 +8,7 @@ class Carro {
   constructor(marca, cor, gastoMedioCombustivel) {
     this.marca = marca; 
     this.cor = cor;
-    this.gastoMedioCombustivel = gastoMedioCombustivel;
+    this.gastoMedioCombustivel = gastoMedioCombustivsel;
   };
 
   calcularValorCombustivel( precoCombustivel, distanciaEmKM ) {
@@ -20,4 +20,4 @@ class Carro {
 
 const civic = new Carro('civic', 'vermelho', 2)
 
-console.log(civic.calcularValorCombustivel(4.75, 1));
+console.log(civic.calcularValorCombustivel(4.75, 2));
