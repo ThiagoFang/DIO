@@ -23,4 +23,4 @@ const calcularIMC = (peso, altura) => {
   if(IMC >=  40) return `O Seu IMC é ${IMC}, Você esta com Obesidade grave!`;
 };
 
-console.log(calcularIMC(80, 1.60))
+console.log(calcularIMC(60, 1.60))
