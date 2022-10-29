@@ -22,7 +22,7 @@ for(let i = 0; i < 5; i++) {
 
 let valor = 0
 for(let i in numeros) {
-  if(numeros[i] > valor) valor = numeros[i]
+  if(numeros[i] > valor) valor = numeros[i];
 };
 
 print(valor);
