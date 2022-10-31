@@ -2,7 +2,7 @@ const pokemonAreaHTML = document.querySelector('.pokemons');
 
 const createPokeLi = (pokemon) => {
   return `<li class="pokemon">
-  <span class="number">number</span>
+  <span class="number">#${pokemon.id}</span>
   <span class="name">${pokemon.name}</span>
 
   <div class="detail">
@@ -16,14 +16,7 @@ const createPokeLi = (pokemon) => {
 </li>`;
 };
 
-const setPokemonList = async () => {
-  const pokemonList = await apiData.getPokemonList();
-
-  if(Array.isArray(pokemonList)) {
-    const listItem = pokemonList.map(pokemon => createPokeLi(pokemon));
-    const newHTML = listItem.join('');
-
-    pokemonAreaHTML.innerHTML += newHTML;
-  };
-};
-setPokemonList();
+apiData.getPokemonList().then((pokemons = []) => {
+  const newHtml = pokemons.map(createPokeLi).join('');
+  pokemonAreaHTML.innerHTML += newHtml;
+});

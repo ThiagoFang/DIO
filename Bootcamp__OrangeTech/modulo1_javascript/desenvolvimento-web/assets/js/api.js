@@ -1,15 +1,17 @@
 const baseURL = 'https://pokeapi.co/api/v2/';
 
 const apiData = {
-  getPokemonList: async (offset = 0, limit = 10) => {
+  getPokemonDetail: async (pokemon) => {
+    return fetch(pokemon.url)
+      .then(response => response.json())
+  },
+  getPokemonList: async (offset = 0, limit = 3) => {
     const url = `${baseURL}pokemon?offset=${offset}&limit=${limit}`;
-
-    try {
-      const data = await fetch(url);
-      const json = await data.json();
-      return json.results;
-    } catch (error) {
-      alert(error);
-    }
+    return fetch(url)
+      .then(response => response.json())
+      .then(jsonBody => jsonBody.results)
+      .then(pokemons => pokemons.map(apiData.getPokemonDetail))
+      .then(detailRequests => Promise.all(detailRequests))
+      .then(pokemonsDetails => pokemonsDetails)
   },
 };
