@@ -1,26 +1,29 @@
-const offset = 0;
-const limit = 10;
-const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
+const pokemonAreaHTML = document.querySelector('.pokemons');
 
-const apiData = {
-  getPokemonList: async () => {
-    try{
-      const data = await fetch(url);
-      const json = await data.json();
-      return json
-    } catch(error) {
-      alert(error);
-    };
-  },
-};
+const createPokeLi = (pokemon) => {
+  return `<li class="pokemon">
+  <span class="number">number</span>
+  <span class="name">${pokemon.name}</span>
 
-const pokemonLog = (pokemonList) => {
-  pokemonList.map(item => console.log(item))
+  <div class="detail">
+    <ol class="types">
+      <li class="type">type</li>
+      <li class="type">type</li>
+    </ol>
+
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt=${pokemon.name}>
+  </div>
+</li>`;
 };
 
 const setPokemonList = async () => {
   const pokemonList = await apiData.getPokemonList();
-  pokemonLog(pokemonList.results)
-}
 
-const pokemonList = setPokemonList();
+  if(Array.isArray(pokemonList)) {
+    const listItem = pokemonList.map(pokemon => createPokeLi(pokemon));
+    const newHTML = listItem.join('');
+
+    pokemonAreaHTML.innerHTML += newHTML;
+  };
+};
+setPokemonList();
