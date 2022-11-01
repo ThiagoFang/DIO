@@ -1,31 +1,37 @@
-const mainInput = document.querySelector('.exercise__input');
+const mainInput = document.querySelector('#mainInput');
 const registerBtn = document.querySelector('.register__button');
-const studentList = document.querySelector('.student__list');
 
-const firstText = document.querySelector('.fisrt__favorite-movie');
-const secondText = document.querySelector('.third__favorite-movie');
-const movieCounter = document.querySelector('.movie__counter');
+const travelInput = document.querySelector('#secondaryInput');
+const travelArea = document.querySelector('.travel__area');
 
-const movies = [];
-
-const updateMovies = (movie) => {
-  movies.push(movie);
-  firstText.innerHTML = "Ainda não existe!";
-  secondText.innerHTML = "Ainda não existe!";
-  movieCounter.innerHTML = movies.length;
-
-  if(movies.length != 0) {
-    firstText.innerHTML = movies[0];
-  };
-  if(movies.length >= 3) {
-    secondText.innerHTML = movies[2];
-  };  
-};
+const locals = [];
 
 registerBtn.addEventListener('click', () => {
   if(mainInput.value.length < 1) {
-    alert('Preencha o campo de Filmes!');
+    alert('Preencha o campo de Local!');
     return
   }
-  updateMovies(mainInput.value);
+  locals.push(mainInput.value);
+  alert(`${mainInput.value} Adicionado com sucesso!`);
+  mainInput.value = '';
+});
+
+
+travelInput.addEventListener('change', () => {
+  const selector = parseInt(travelInput.value) - 1;
+  const item = locals[selector];
+
+  if(locals.length < selector + 1) {
+    alert('Você não fez uma Xª viagem!');
+    travelInput.value = '';
+    return
+  }
+  if(travelInput.value < 1) {
+    alert('Numero não disponivel!');
+    travelInput.value = '';
+    return
+  }
+
+  travelArea.innerHTML = ''
+  travelArea.innerHTML += item;
 });
