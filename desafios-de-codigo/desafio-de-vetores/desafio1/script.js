@@ -2,31 +2,30 @@ const mainInput = document.querySelector('.exercise__input');
 const registerBtn = document.querySelector('.register__button');
 const studentList = document.querySelector('.student__list');
 
-const students = [];
+const firstText = document.querySelector('.fisrt__favorite-movie');
+const secondText = document.querySelector('.third__favorite-movie');
+const movieCounter = document.querySelector('.movie__counter');
 
-const createHtmlList = (list) => {
-  studentList.innerHTML = '';
-  for(let i in list) {
-    const newItem = `<li class="student__item">${list[i]}</li>`
-    studentList.innerHTML += newItem;
-  }
-};
+const movies = [];
 
-const createReverseStudentList = (studentName) => {
-  const reverseList = [];
+const updateMovies = (movie) => {
+  movies.push(movie);
+  firstText.innerHTML = "Ainda não existe!";
+  secondText.innerHTML = "Ainda não existe!";
+  movieCounter.innerHTML = movies.length;
 
-  for(let i = students.length - 1; i >= 0; i--) {
-    reverseList.push(students[i]);
-  }
-  createHtmlList(reverseList);
+  if(movies.length != 0) {
+    firstText.innerHTML = movies[0];
+  };
+  if(movies.length >= 3) {
+    secondText.innerHTML = movies[2];
+  };  
 };
 
 registerBtn.addEventListener('click', () => {
   if(mainInput.value.length < 1) {
-    alert('Preencha o campo de alunos!');
+    alert('Preencha o campo de Filmes!');
     return
   }
-
-  students.push(mainInput.value);
-  createReverseStudentList(mainInput.value);
+  updateMovies(mainInput.value);
 });
