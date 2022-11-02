@@ -16,7 +16,6 @@ registerBtn.addEventListener('click', () => {
   mainInput.value = '';
 });
 
-
 travelInput.addEventListener('change', () => {
   const selector = parseInt(travelInput.value) - 1;
   const item = locals[selector];

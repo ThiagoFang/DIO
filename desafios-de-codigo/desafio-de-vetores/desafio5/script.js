@@ -4,21 +4,14 @@ const studentList = document.querySelector('.student__list');
 
 const students = [];
 
-const createHtmlList = (list) => {
-  studentList.innerHTML = '';
-  for(let i in list) {
-    const newItem = `<li class="student__item">${list[i]}</li>`
-    studentList.innerHTML += newItem;
-  }
-};
-
-const createReverseStudentList = (studentName) => {
+const createReverseStudentList = () => {
   const reverseList = [];
 
   for(let i = students.length - 1; i >= 0; i--) {
     reverseList.push(students[i]);
   }
-  createHtmlList(reverseList);
+  const htmlList = reverseList.map(item => `<li class="student__item">${item}</li>`)
+  studentList.innerHTML = htmlList.join('');
 };
 
 registerBtn.addEventListener('click', () => {
@@ -28,5 +21,5 @@ registerBtn.addEventListener('click', () => {
   }
 
   students.push(mainInput.value);
-  createReverseStudentList(mainInput.value);
+  createReverseStudentList();
 });
