@@ -7,7 +7,7 @@ const createPokeLi = (pokemon) => {
 
   <div class="detail">
     <ol class="types">
-      ${pokemon.types.map(type => `<li class="type">${type}</li>`).join('')}
+      ${pokemon.types.map(type => `<li class="type ${type}">${type}</li>`).join('')}
     </ol>
 
     <img src="${pokemon.photo}" alt=${pokemon.name}>
@@ -15,7 +15,7 @@ const createPokeLi = (pokemon) => {
 </li>`;
 };
 
-apiData.getPokemonList(0, 6).then((pokemons = []) => {
+apiData.getPokemonList(0, 5).then((pokemons = []) => {
   const newHtml = pokemons.map(createPokeLi).join('');
   pokemonAreaHTML.innerHTML = '';
   pokemonAreaHTML.innerHTML += newHtml;

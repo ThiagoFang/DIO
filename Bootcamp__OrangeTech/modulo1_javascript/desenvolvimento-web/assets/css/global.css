@@ -46,6 +46,79 @@ body{
   color: #FFF;
 }
 
+.pokemon.normal,
+.pokemon .detail .types .type.normal {
+  background-color: #a6a877;
+}
+.pokemon.grass,
+.pokemon .detail .types .type.grass {
+  background-color: #77c850;
+}
+.pokemon.fire,
+.pokemon .detail .types .type.fire {
+  background-color: #ee7f30;
+}
+.pokemon.water,
+.pokemon .detail .types .type.water {
+  background-color: #678fee;
+}
+.pokemon.eletric,
+.pokemon .detail .types .type.eletric {
+  background-color: #f7cf2e;
+}
+.pokemon.ice,
+.pokemon .detail .types .type.ice {
+  background-color: #98d5d7;
+}
+.pokemon.ground,
+.pokemon .detail .types .type.ground {
+  background-color: #dfbf69;
+}
+.pokemon.flying,
+.pokemon .detail .types .type.flying {
+  background-color: #a98ff0;
+}
+.pokemon.poison,
+.pokemon .detail .types .type.poison {
+  background-color: #a040a0;
+}
+.pokemon.fighting,
+.pokemon .detail .types .type.fighting {
+  background-color: #bf3029;
+}
+.pokemon.psychic,
+.pokemon .detail .types .type.psychic {
+  background-color: #f65687;
+}
+.pokemon.dark,
+.pokemon .detail .types .type.dark {
+  background-color: #725847;
+}
+.pokemon.rock,
+.pokemon .detail .types .type.rock {
+  background-color: #b8a137;
+}
+.pokemon.bug,
+.pokemon .detail .types .type.bug {
+  background-color: #a8b720;
+}
+.pokemon.ghost,
+.pokemon .detail .types .type.ghost {
+  background-color: #6e5896;
+}
+.pokemon.steel,
+.pokemon .detail .types .type.steel {
+  background-color: #b9b7cf;
+}
+.pokemon.dragon,
+.pokemon .detail .types .type.dragon {
+  background-color: #6f38f6;
+}
+.pokemon.fairy,
+.pokemon .detail .types .type.fairy {
+  background-color: #f9aec7;
+}
+
 .pokemons .pokemon .number {
   color: #000;
   opacity: .3;
@@ -58,6 +131,7 @@ body{
   margin-bottom: .25rem;
   font-weight: 500;
   letter-spacing: .07rem;
+  text-transform: capitalize;
 }
 
 .pokemons .pokemon .detail {
@@ -77,10 +151,13 @@ body{
 }
 
 .pokemons .pokemon .detail .types .type {
-  background-color: hsla(22, 10%, 2%, .1);
+  text-align: center;
   color: #FFF;
-  font-size: .625rem;
+  font-size: .655rem;
   padding: .25rem .5rem;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, .2);
+  text-transform: capitalize;
+  filter: brightness(1.05);
   border-radius: 1rem;
 }
 
