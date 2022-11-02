@@ -91,7 +91,7 @@ body {
 
 .movies__list {
   display: grid;
-  row-gap: 1rem;
+  row-gap: .75rem;
 }
 
 .movies__list .movie__item {
