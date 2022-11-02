@@ -1,4 +1,7 @@
 const pokemonAreaHTML = document.querySelector('.pokemons');
+const loadMoreButton = document.getElementById('loadMoreButton');
+const limit = 5;
+let offset = 0;
 
 const createPokeLi = (pokemon) => {
   return `<li class="pokemon ${pokemon.type}">
@@ -15,8 +18,16 @@ const createPokeLi = (pokemon) => {
 </li>`;
 };
 
-apiData.getPokemonList(0, 5).then((pokemons = []) => {
-  const newHtml = pokemons.map(createPokeLi).join('');
-  pokemonAreaHTML.innerHTML = '';
-  pokemonAreaHTML.innerHTML += newHtml;
+const loadPokemonItems = (offset, limit) => {
+  apiData.getPokemonList(offset, limit).then((pokemons = []) => {
+    const newHtml = pokemons.map(createPokeLi).join('');
+    pokemonAreaHTML.innerHTML += newHtml;
+  });
+};
+
+loadPokemonItems(offset, limit)
+ 
+loadMoreButton.addEventListener('click', () => {
+  offset += limit;
+  loadPokemonItems(offset, limit);
 });

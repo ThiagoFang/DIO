@@ -3,7 +3,7 @@ const baseURL = 'https://pokeapi.co/api/v2/';
 const convertPokeApiDetailToPokemon = (pokeDetail) => {
   const pokemon = new Pokemon();
   pokemon.name = pokeDetail.name;
-  pokemon.id = pokeDetail.id;
+  pokemon.id = pokeDetail.order;
 
   const types = pokeDetail.types.map(typeSlot => typeSlot.type.name);
   const [type] = types;

@@ -62,8 +62,8 @@ body{
 .pokemon .detail .types .type.water {
   background-color: #678fee;
 }
-.pokemon.eletric,
-.pokemon .detail .types .type.eletric {
+.pokemon.electric,
+.pokemon .detail .types .type.electric {
   background-color: #f7cf2e;
 }
 .pokemon.ice,
@@ -170,6 +170,29 @@ body{
 
 .pokemons .pokemon:hover .detail img {
   transform: translateX(5px);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#loadMoreButton {
+  background-color: #6c79db;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  padding: .5rem .75rem;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  transition: .3s;
+}
+
+#loadMoreButton:hover {
+  opacity: .9;
+  transform: translateY(-2px);
 }
 
 @media screen and (max-width: 320px) {
