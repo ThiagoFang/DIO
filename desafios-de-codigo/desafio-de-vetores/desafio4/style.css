@@ -94,9 +94,17 @@ body {
   row-gap: 1rem;
 }
 
-.movies__list .movie__item {
+.movies__list .movie__item,
+.movies__list .movie__item-variant {
   font-size: 1rem;
-  background-color: var(--gray-color-800);
   padding: .25rem .75rem;
   border-radius: .35rem;
-} 
+}
+
+.movies__list .movie__item {
+  background-color: #162772;
+}
+
+.movies__list .movie__item-variant {
+  background-color: #791818;
+}
