@@ -12,10 +12,15 @@ const formatPokemonid = (id) => {
 }
 
 const appendModalInfo = (pokemon) => {
+  const pokemonInfo = document.querySelector('.pokemon__info');
   const nameArea = document.querySelector('.main__info-name');
   const idArea = document.querySelector('.pokemon__id');
   const types = document.querySelector('.main__info-types');
   const pokeImg = document.querySelector('.pokemon__data-img')
+
+  pokemonInfo.className = '';
+  pokemonInfo.classList.add('pokemon__info');
+  pokemonInfo.classList.add(pokemon.type);
 
   nameArea.innerHTML = pokemon.name;
   idArea.innerHTML = formatPokemonid(pokemon.id);

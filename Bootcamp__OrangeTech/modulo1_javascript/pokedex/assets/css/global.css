@@ -207,7 +207,6 @@ body{
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: #db3434;
   padding-top: 6rem;
   row-gap: 15rem;
   display: flex;
@@ -265,7 +264,7 @@ body{
 
 .pokemon__data {
   background-color: #FFF;
-  padding: 2rem;
+  padding: 4rem 3rem;
   box-shadow: 0rem 0rem 20px rgba(0, 0, 0, .2);
   border-radius: 2.5rem 2.5rem 0rem 0;
   flex: 1;
@@ -280,6 +279,49 @@ body{
 }
 .pokemon__data:hover .pokemon__data-img {
   transform: translateY(-.5rem);
+}
+.pokemon__stats .pokemon__stats-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  padding-bottom: 1rem;
+}
+.pokemon__stats-area {
+  list-style: none;
+  margin: 1.5rem 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.pokemon__stats-item {
+  display: flex;
+  column-gap: 3rem;
+}
+.pokemon__stats-itemTitle {
+  width: 4.5rem;
+  font-size: .95rem;
+  color: #666;
+}
+.pokemon__stats-itemBase {
+  width: 3rem;
+  font-weight: 500;
+  text-align: center;
+  color: #333;
+}
+.pokemon__stats-bar {
+  background-color: rgba(0, 0, 0, .2);
+  overflow: hidden;
+  flex: 1;
+  height: 4px;
+  border-radius: 1rem;
+  align-self: center;
+}
+.pokemon__stats__barFill {
+  background-color: rgb(66, 169, 253);
+  width: 50%;
+  height: 100%;
 }
 
 .back__arrow {
