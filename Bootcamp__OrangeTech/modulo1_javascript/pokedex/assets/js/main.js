@@ -11,12 +11,31 @@ const formatPokemonid = (id) => {
   return `#${id}`;
 }
 
+const formatStatsLi = (stats) => {
+  const html = stats.map(stat => {
+    const maxStat = 200;
+    const width = (stat.base * 100) / maxStat;
+
+    return`
+      <li class="pokemon__stats-item">
+        <div class="pokemon__stats-itemTitle">${stat.name}</div>
+        <div class="pokemon__stats-itemBase">${stat.base}</div>
+        <div class="pokemon__stats-bar">
+          <div class="pokemon__stats__barFill" style="width:${width}%;"></div>
+        </div>
+      </li>
+    `;
+  });
+  return html;
+};
+
 const appendModalInfo = (pokemon) => {
   const pokemonInfo = document.querySelector('.pokemon__info');
   const nameArea = document.querySelector('.main__info-name');
   const idArea = document.querySelector('.pokemon__id');
   const types = document.querySelector('.main__info-types');
   const pokeImg = document.querySelector('.pokemon__data-img')
+  const pokemonStats = document.querySelector('.pokemon__stats-area')
 
   pokemonInfo.className = '';
   pokemonInfo.classList.add('pokemon__info');
@@ -26,12 +45,12 @@ const appendModalInfo = (pokemon) => {
   idArea.innerHTML = formatPokemonid(pokemon.id);
   types.innerHTML = pokemon.types.map(type => `<li class="main__info-type">${type}</li>`).join('');
   pokeImg.src = pokemon.photo;
+  pokemonStats.innerHTML = formatStatsLi(pokemon.stats).join('');
 };
 
 const getPokemon = async (id) => {
   const pokemon = await apiData.getOnePokemon(id);
   appendModalInfo(pokemon);
-
   pokemonInfoArea.classList.add('active');
 }
 

@@ -8,6 +8,18 @@ const convertPokeApiDetailToPokemon = (pokeDetail) => {
   const types = pokeDetail.types.map(typeSlot => typeSlot.type.name);
   const [type] = types;
 
+  const stats = pokeDetail.stats.map(statSlot => {
+    if(statSlot.stat.name === 'special-defense') {
+      return { name: 'Sp. Atk', base: statSlot.base_stat }
+    }
+    if(statSlot.stat.name === 'special-attack') {
+      return { name: 'Sp. Def', base: statSlot.base_stat }
+    }
+    return { name: statSlot.stat.name, base: statSlot.base_stat };
+  });
+
+  pokemon.stats = stats;
+
   pokemon.types = types;
   pokemon.type = type;
 
