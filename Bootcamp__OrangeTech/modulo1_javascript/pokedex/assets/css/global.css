@@ -49,58 +49,76 @@ body{
   cursor: pointer;
 }
 
-.pokemon.normal {
+.pokemon.normal,
+.pokemon__info.normal {
   background-color: #a6a877;
 }
-.pokemon.grass {
+.pokemon.grass,
+.pokemon__info.grass {
   background-color: #77c850;
 }
-.pokemon.fire {
+.pokemon.fire,
+.pokemon__info.fire {
   background-color: #ee7f30;
 }
-.pokemon.water {
+.pokemon.water, 
+.pokemon__info.water {
   background-color: #678fee;
 }
-.pokemon.electric {
+.pokemon.electric, 
+.pokemon__info.electric {
   background-color: #f7cf2e;
 }
-.pokemon.ice {
+.pokemon.ice,
+.pokemon__info.ice {
   background-color: #98d5d7;
 }
-.pokemon.ground {
+.pokemon.ground, 
+.pokemon__info.ground {
   background-color: #dfbf69;
 }
-.pokemon.flying {
+.pokemon.flying, 
+.pokemon__info.flying {
   background-color: #a98ff0;
 }
-.pokemon.poison {
+.pokemon.poison, 
+.pokemon__info.poison {
   background-color: #a040a0;
 }
-.pokemon.fighting {
+.pokemon.fighting, 
+.pokemon__info.fighting {
   background-color: #bf3029;
 }
-.pokemon.psychic {
+.pokemon.psychic, 
+.pokemon__info.psychic {
   background-color: #f65687;
 }
-.pokemon.dark {
+.pokemon.dark, 
+.pokemon__info.dark {
   background-color: #725847;
 }
-.pokemon.rock {
+.pokemon.rock, 
+.pokemon__info.rock {
   background-color: #b8a137;
 }
-.pokemon.bug {
+.pokemon.bug, 
+.pokemon__info.bug {
   background-color: #a8b720;
 }
-.pokemon.ghost {
+.pokemon.ghost, 
+.pokemon__info.ghost {
   background-color: #6e5896;
 }
-.pokemon.steel {
+.pokemon.steel, 
+.pokemon__info.steel {
   background-color: #b9b7cf;
 }
-.pokemon.dragon {
+.pokemon.dragon, 
+.pokemon__info.dragon {
   background-color: #6f38f6;
 }
-.pokemon.fairy {
+.pokemon.fairy, 
+.pokemon__info.fairy {
   background-color: #f9aec7;
 }
 
@@ -216,6 +234,7 @@ body{
 }
 .main__info .main__info-name {
   letter-spacing: .05rem;
+  text-transform: capitalize;
   margin: 0;
   padding: 0;
 }
@@ -230,6 +249,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: capitalize;
   line-height: 1rem;
   background-color: rgba(255, 255, 255, .2);
   padding: .25rem .75rem;
@@ -249,6 +269,17 @@ body{
   box-shadow: 0rem 0rem 20px rgba(0, 0, 0, .2);
   border-radius: 2.5rem 2.5rem 0rem 0;
   flex: 1;
+}
+.pokemon__data-img {
+  position: absolute;
+  inset: 0;
+  height: 200px;
+  top: 16rem;
+  margin: 0 auto;
+  transition: transform .2s ease-in-out;
+}
+.pokemon__data:hover .pokemon__data-img {
+  transform: translateY(-.5rem);
 }
 
 .back__arrow {
