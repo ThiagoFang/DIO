@@ -6,3 +6,14 @@
 
 // Saída
 // A saída deverá retornar o valor da soma de todos os múltiplos A até o seu limite N.
+
+const number = 3;
+const limit = 18;
+
+let multiplosDeN = 0;
+
+for(let i = 0; i <= limit; i++) {
+  if(i % number === 0) console.log(i)
+}
+
+console.log(multiplosDeN);
