@@ -13,7 +13,7 @@ const limit = 18;
 let multiplosDeN = 0;
 
 for(let i = 0; i <= limit; i++) {
-  if(i % number === 0) console.log(i)
+  if(i % number === 0) multiplosDeN += i;
 }
 
 console.log(multiplosDeN);

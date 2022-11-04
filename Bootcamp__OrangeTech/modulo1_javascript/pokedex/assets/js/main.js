@@ -3,8 +3,12 @@ const loadMoreButton = document.getElementById('loadMoreButton');
 const limit = 5;
 let offset = 0;
 
+const getPokemon = (id) => {
+  console.log(id)
+}
+
 const createPokeLi = (pokemon) => {
-  return `<li class="pokemon ${pokemon.type}">
+  return `<li onclick="getPokemon(${pokemon.id})" data-key="${pokemon.id}" class="pokemon ${pokemon.type}">
   <span class="number">#${pokemon.id}</span>
   <span class="name">${pokemon.name}</span>
 
