@@ -1,10 +1,13 @@
 const pokemonAreaHTML = document.querySelector('.pokemons');
+const pokemonInfoArea = document.querySelector('.pokemon__info');
 const loadMoreButton = document.getElementById('loadMoreButton');
+const closeModalArrow = document.querySelector('.back__arrow');
 const limit = 5;
 let offset = 0;
 
 const getPokemon = (id) => {
-  console.log(id)
+  console.log(pokemonInfoArea.classList)
+  pokemonInfoArea.classList.add('active');
 }
 
 const createPokeLi = (pokemon) => {
@@ -16,7 +19,7 @@ const createPokeLi = (pokemon) => {
     <ol class="types">
       ${pokemon.types.map(type => `<li class="type ${type}">${type}</li>`).join('')}
     </ol>
-
+    
     <img src="${pokemon.photo}" alt=${pokemon.name}>
   </div>
 </li>`;
@@ -30,6 +33,12 @@ const loadPokemonItems = (offset, limit) => {
 };
 
 loadPokemonItems(offset, limit)
+
+const closeModal = () => {
+  pokemonInfoArea.classList.remove('active');
+};
+
+closeModalArrow.addEventListener('click', closeModal);
  
 loadMoreButton.addEventListener('click', () => {
   offset += limit;
