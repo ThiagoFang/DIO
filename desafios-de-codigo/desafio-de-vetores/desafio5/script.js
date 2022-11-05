@@ -5,11 +5,9 @@ const studentList = document.querySelector('.student__list');
 const students = [];
 
 const createReverseStudentList = () => {
-  const reverseList = [];
-
-  for(let i = students.length - 1; i >= 0; i--) {
-    reverseList.push(students[i]);
-  }
+  let reverseList = [...students];
+  reverseList.reverse();
+  
   const htmlList = reverseList.map(item => `<li class="student__item">${item}</li>`)
   studentList.innerHTML = htmlList.join('');
 };
@@ -19,7 +17,6 @@ registerBtn.addEventListener('click', () => {
     alert('Preencha o campo de alunos!');
     return
   }
-
   students.push(mainInput.value);
   createReverseStudentList();
 });
