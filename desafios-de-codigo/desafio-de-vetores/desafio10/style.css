@@ -90,12 +90,8 @@ body {
   background-color: var(--main-color-variant);
 }
 
-.media__inputs {
-  display: flex;
-  column-gap: 1rem;
-}
-
-.notes,
-.media {
+.numerosCadastrados,
+.maiorEMenor {
+  margin-top: 1rem;
   font-size: 1rem;
 }
