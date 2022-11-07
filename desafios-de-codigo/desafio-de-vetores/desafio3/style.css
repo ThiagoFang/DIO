@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
 }
 
-.excercise__box{
+.exercise__box{
   min-width: 300px;
   font-size: 1.5rem;
   display: flex;
@@ -41,7 +41,7 @@ body {
   border-radius: .75rem;
 }
 
-.excercise__box .title {
+.exercise__box .title {
   font-weight: 500;
 }
 
